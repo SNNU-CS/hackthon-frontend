@@ -21,14 +21,10 @@ Page({
   onShow: function () {
     var that = this
     //调用应用实例的方法获取全局数据
-    console.log("hello")
-    console.log(this.data.banner)
     reda(this, 'banner');
   },
   buttonListener:function(e){
     var id = e.currentTarget.dataset.id
-    console.log(id);
-    console.log('/pages/activityDetail/activityDetail?activityUserId=' + id);
     wx.navigateTo({
       url: '/pages/activityDetail/activityDetail?activityUserId='+id,
     })
@@ -43,7 +39,6 @@ function reda(_self, type) {
     },
 
     success: function (res) {
-      console.log(res.data);
       _self.setData({
         "banner": res.data.data,
       });
