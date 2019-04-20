@@ -127,10 +127,10 @@ Page({
           wx.request({
             url: 'https://test.xiekeyi98.com/user/',
             data: JSON.stringify({
-              nickName: this.data.userInfo.nickName,
-              avatarUrl: this.data.userInfo.avatarUrl,
-              gender: this.data.userInfo.gender,
-              code: code
+              nick_name: this.data.userInfo.nickName,
+              avatar_url: this.data.userInfo.avatarUrl,
+              // gender: this.data.userInfo.gender,
+              code: code  
             }),
             method: 'POST',
             header: {
