@@ -49,8 +49,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
-  },
+  onReady: function() {},
 
   /**
    * 生命周期函数--监听页面显示
@@ -98,7 +97,19 @@ Page({
     wx.navigateTo({
       url: '../allActivities/index',
       success: function(res) {},
-      fail: function(res) {console.error("negativeTo Error")},
+      fail: function(res) {
+        console.error("negativeTo Error")
+      },
+    })
+  },
+
+  onClickToMessageCenter() {
+    wx.navigateTo({
+      url: '../messageCenter/index',
+      success: function (res) { },
+      fail: function (res) {
+        console.error("negativeTo Error")
+      },
     })
   },
 })
