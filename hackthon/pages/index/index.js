@@ -34,7 +34,7 @@ Page({
 })
 function reda(_self, type) {
   wx.request({
-    url: 'http://148.70.15.188:8000/activity/', //仅为示例，并非真实的接口地址
+    url: 'https://test.xiekeyi98.com/activity/', //仅为示例，并非真实的接口地址
     header: {
       'content-type': 'application/json'
     },
