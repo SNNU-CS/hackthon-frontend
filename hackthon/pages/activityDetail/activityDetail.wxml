@@ -3,3 +3,14 @@
   id:{{id}}
 </text>
 </view>
+
+<text>\n</text>
+<view slot="footer">
+    <van-button bindtap='handleSubmit' type='info'round size="large" >加入活动</van-button>
+    <van-dialog 
+     class="van-hairline--top van-dialog__footer"
+     id="van-dialog"
+     bind:confirm="onConfirm"
+     bind:cancel="onCancel"
+    ></van-dialog>
+</view>
