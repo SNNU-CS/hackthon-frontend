@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/personal_center/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -30,7 +31,7 @@
       {
         "selectedIconPath": "images/用户.png",
         "iconPath": "images/用户.png",
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/personal_center/index",
         "text": "我的"
       }
     ]
