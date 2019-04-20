@@ -1,0 +1,5 @@
+<!--pages/messageCenter/index.wxml-->
+
+<view class="container">
+  <text>test</text>
+</view>
