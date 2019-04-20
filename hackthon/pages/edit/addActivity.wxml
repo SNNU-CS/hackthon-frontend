@@ -35,5 +35,5 @@
 </van-cell-group>
 </view>
 <view class="btn">
-    <van-button size="large">提交活动</van-button>
+    <van-button type='info' round size="large">提交活动</van-button>
 </view>
