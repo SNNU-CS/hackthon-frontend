@@ -112,4 +112,35 @@ Page({
       },
     })
   },
+
+  getUserInfo: function (e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
+    wx.login({
+      success: res => {
+        var code = res.code;
+        if (code) {
+          wx.request({
+            url: 'https://test.xiekeyi98.com/user/',
+            data: JSON.stringify({
+              nickName: this.data.userInfo.nickName,
+              avatarUrl: this.data.userInfo.avatarUrl,
+              gender: this.data.userInfo.gender,
+              code: code
+            }),
+            method: 'POST',
+            header: {
+              'content-type': 'application/json'
+            },
+          })
+        } else {
+          console.log('获取用户登录失败：' + res.errMsg);
+        }
+      }
+    })
+  }
 })
