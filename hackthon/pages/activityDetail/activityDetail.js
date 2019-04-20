@@ -38,12 +38,9 @@ Page({
         var code = res.code;
         if (code) {
           wx.request({
-            url: 'https://test.xiekeyi98.com/user/',
+            url: 'https://test.xiekeyi98.com/activity/user/'+code+'/',
             data: JSON.stringify({
-              nickName: this.data.userInfo.nickName,
-              avatarUrl: this.data.userInfo.avatarUrl,
-              gender: this.data.userInfo.gender,
-              code: code
+              activity_id : this.data.banner.id
             }),
             method: 'POST',
             header: {
@@ -61,10 +58,10 @@ Page({
     Toast('成功加入活动')
     setTimeout(function () {
       //要延时执行的代码
-      wx.navigateBack({
-        delta: 1
+      wx.switchTab({
+        url: '../index/index',
       })
-    }, 2000) //延迟时间 这里是1秒
+    }, 1000) //延迟时间 这里是1秒
     
   },
 
@@ -78,7 +75,6 @@ Page({
     })
     console.log("id"+this.data.id),
     reda(this, 'banner');
-    
   },
 
 })
