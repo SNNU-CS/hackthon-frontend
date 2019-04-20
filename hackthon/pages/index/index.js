@@ -18,7 +18,7 @@ Page({
     statusid:null,
     msg:'',
   },
-  onLoad: function () {
+  onShow: function () {
     var that = this
     //调用应用实例的方法获取全局数据
     console.log("hello")
