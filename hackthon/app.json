@@ -6,8 +6,33 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "Hackathon@XDU-MSC",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/首页.png",
+        "iconPath": "images/首页.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/编辑.png",
+        "iconPath": "images/编辑.png",
+        "pagePath": "pages/index/index",
+        "text": "编辑"
+      },
+      {
+        "selectedIconPath": "images/用户.png",
+        "iconPath": "images/用户.png",
+        "pagePath": "pages/index/index",
+        "text": "我的"
+      }
+    ]
+  }
 }
