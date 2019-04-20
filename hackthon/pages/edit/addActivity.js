@@ -31,7 +31,7 @@ Page({
 
   addActivity: function () {
     wx.request({
-      url: 'http://148.70.15.188:8000/activity/',
+      url: 'https://test.xiekeyi98.com/activity/',
       data: JSON.stringify({
             title: this.data.param['title'],
             description: this.data.param['description'],

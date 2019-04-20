@@ -1,5 +1,18 @@
-<view>
-<text>
-  id:{{id}}
-</text>
+
+<!-- 活动详细内容 -->
+<van-panel title="主题: 奶茶茶" status="人数未满" use-footer-slo></van-panel>
+<van-panel title="开始时间: "></van-panel>
+<van-panel title="现有人数: "></van-panel>
+<van-panel title="需要人数: "></van-panel>
+<van-panel title="活动描述: ">
+</van-panel>
+<text>\n</text>
+<view slot="footer">
+    <van-button bindtap='handleSubmit' type='info'round size="large" >加入活动</van-button>
+    <van-dialog 
+     class="van-hairline--top van-dialog__footer"
+     id="van-dialog"
+     bind:confirm="onConfirm"
+     bind:cancel="onCancel"
+    ></van-dialog>
 </view>
