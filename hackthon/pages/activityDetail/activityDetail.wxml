@@ -1,19 +1,25 @@
 
 <!-- 活动详细内容 -->
-<van-panel title="主题: {{banner.title}}" status="人数未满" use-footer-slo></van-panel>
+<van-panel title="主题: {{banner.title}}"></van-panel>
 <van-panel title="开始时间: {{banner.create_time}}"></van-panel>
-<van-panel title="现有人数: "></van-panel>
-<van-panel title="需要人数: "></van-panel>
+<van-panel title="现有人数: {{banner.number_now}}"></van-panel>
+<van-panel title="需要人数: {{banner.number}}"></van-panel>
 <van-panel title="活动描述: {{banner.description}}">
 </van-panel>
 <van-toast id="van-toast" />
 <text>\n</text>
 <view slot="footer">
-    <van-button bindtap='handleSubmit' type='info'round size="large" >加入活动</van-button>
-    <van-dialog 
-     class="van-hairline--top van-dialog__footer"
-     id="van-dialog"
-     bind:confirm="onConfirm"
-     bind:cancel="onCancel"
-    ></van-dialog>
+    <view wx:if="{{banner.number > banner.number_now}}">
+      <van-button bindtap='handleSubmit' type='info'round size="large" >加入活动</van-button>
+      <van-dialog 
+      class="van-hairline--top van-dialog__footer"
+      id="van-dialog"
+      bind:confirm="onConfirm"
+      bind:cancel="onCancel"
+      ></van-dialog>
+    </view>
+    <view wx:else>
+      <van-button disabled bindtap='handleSubmit' type='info'round size="large" >加入活动</van-button>
+    </view>
+
 </view>

@@ -11,8 +11,8 @@
 <view wx:for="{{banner}}" wx:for-item="item">
   <text> \n </text>
   <van-card
-    now_person="2"
-    need_person="10"
+    now_person=": {{item.number_now}}"
+    need_person=": {{item.number}}  "
     desc="{{item.description}}"
     title="{{item.title}}"
   >

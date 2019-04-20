@@ -32,6 +32,29 @@ Page({
     wx.showLoading({
       title: '正在提交请求'
     })
+    //获取用户openid
+    wx.login({
+      success: res => {
+        var code = res.code;
+        if (code) {
+          wx.request({
+            url: 'https://test.xiekeyi98.com/user/',
+            data: JSON.stringify({
+              nickName: this.data.userInfo.nickName,
+              avatarUrl: this.data.userInfo.avatarUrl,
+              gender: this.data.userInfo.gender,
+              code: code
+            }),
+            method: 'POST',
+            header: {
+              'content-type': 'application/json'
+            },
+          })
+        } else {
+          console.log('获取用户登录失败：' + res.errMsg);
+        }
+      }
+    })
     //修改数据库信息 需要人数-- 现有人数++
     wx.hideLoading()
     Dialog.close()
@@ -55,6 +78,7 @@ Page({
     })
     console.log("id"+this.data.id),
     reda(this, 'banner');
+    
   },
 
 })
