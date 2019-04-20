@@ -1,4 +1,22 @@
 <!--pages/allActivities/index.wxml-->
-<view class="container">
-  <text>test</text>
-</view>
+<van-card
+  now_person="2"
+  need_person="10"
+  desc="奶茶求组团！！冲冲冲"
+  title="一起快乐的拼奶茶呀"
+>
+  <view slot="footer">
+    <van-button disabled size="small">已结束</van-button>
+  </view>
+  </van-card>
+  <text> \n </text>
+  <van-card
+  now_person="8"
+  need_person="20"
+  desc="快乐的狼人杀！！！来人呀！！天黑请闭眼！"
+  title="狼人杀来组团"
+>
+  <view slot="footer">
+    <van-button disabled type="primary" size="small">即将开始</van-button>
+  </view>
+  </van-card>
