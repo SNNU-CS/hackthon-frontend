@@ -19,7 +19,6 @@ Page({
       title: '确认信息',
       message: '你确认加入本次活动吗qwq确认后不可以取消的哦'
     })
-    console.log(this.data.openid)
   },
 /**
  * dialog确认和取消按钮绑定的事件
@@ -73,20 +72,17 @@ Page({
     that.setData({
       id: options.activityUserId
     })
-    console.log("id"+this.data.id),
     reda(this, 'banner');
   },
 
 })
 function reda(_self, type) {
-  console.log("now"+_self.data.id),
   wx.request({
     url: 'https://test.xiekeyi98.com/activity/'+_self.data.id+'/', //仅为示例，并非真实的接口地址
     header: {
       'content-type': 'application/json'
     },
     success: function (res) {
-      console.log(res.data);
       _self.setData({
         "banner": res.data.data,
       });
