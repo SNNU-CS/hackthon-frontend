@@ -25,11 +25,14 @@ Page({
     console.log(this.data.banner)
     reda(this, 'banner');
   },
-  buttonListener:function(){
-    var that = this
+  buttonListener:function(e){
+    var id = e.currentTarget.dataset.id
+    console.log(id);
+    console.log('/pages/activityDetail/activityDetail?activityUserId=' + id);
     wx.navigateTo({
-      url: '/pages/activityDetail/activityDetail?activityUserId='+that.data.id
+      url: '/pages/activityDetail/activityDetail?activityUserId='+id,
     })
+
   }
 })
 function reda(_self, type) {
@@ -42,9 +45,7 @@ function reda(_self, type) {
     success: function (res) {
       console.log(res.data);
       _self.setData({
-      
         "banner": res.data.data,
-      
       });
     }
   })

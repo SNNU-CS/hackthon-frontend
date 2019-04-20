@@ -1,5 +1,5 @@
 import Dialog from '../../miniprogram_npm/vant-weapp/dialog/dialog';
-
+import Toast from '../../miniprogram_npm/vant-weapp/toast/toast';
 Page({
 
   /**
@@ -7,35 +7,10 @@ Page({
    */
   data: {
     id:null,
-    openid:null
+    openid:null,
+    banner:[]
   },
-  /**
-   * 获取用户id
-   */
-  onLoad: function () {
-    var that = this
-    wx.login({
-      success: function (res) {
-        console.log("res.code=====" + res.code);
-        if (res.code) {
-          //发起网络请求
-          wx.request({
-            url: 'http://148.70.15.188:8000',
-            method: "POST",
-            success: function (res) {
-              that.setData({
-                openid: res.data.openid
-              })
-            }
-          })
-        } else {
-          console.log('获取用户登录态失败！' + res.errMsg)
-        }
-      }
-    });
-  },
-
-
+ 
   /**
    * 点击加入活动
    */
@@ -57,12 +32,40 @@ Page({
     wx.showLoading({
       title: '正在提交请求'
     })
+    //获取用户openid
+    wx.login({
+      success: res => {
+        var code = res.code;
+        if (code) {
+          wx.request({
+            url: 'https://test.xiekeyi98.com/user/',
+            data: JSON.stringify({
+              nickName: this.data.userInfo.nickName,
+              avatarUrl: this.data.userInfo.avatarUrl,
+              gender: this.data.userInfo.gender,
+              code: code
+            }),
+            method: 'POST',
+            header: {
+              'content-type': 'application/json'
+            },
+          })
+        } else {
+          console.log('获取用户登录失败：' + res.errMsg);
+        }
+      }
+    })
     //修改数据库信息 需要人数-- 现有人数++
     wx.hideLoading()
     Dialog.close()
-    wx.redirectTo({
-      url: '/pages/activityDetail/activityDetail?activityUserId=50',
-    })
+    Toast('成功加入活动')
+    setTimeout(function () {
+      //要延时执行的代码
+      wx.navigateBack({
+        delta: 1
+      })
+    }, 2000) //延迟时间 这里是1秒
+    
   },
 
   /**
@@ -73,6 +76,24 @@ Page({
     that.setData({
       id: options.activityUserId
     })
+    console.log("id"+this.data.id),
+    reda(this, 'banner');
+    
   },
 
 })
+function reda(_self, type) {
+  console.log("now"+_self.data.id),
+  wx.request({
+    url: 'https://test.xiekeyi98.com/activity/'+_self.data.id+'/', //仅为示例，并非真实的接口地址
+    header: {
+      'content-type': 'application/json'
+    },
+    success: function (res) {
+      console.log(res.data);
+      _self.setData({
+        "banner": res.data.data,
+      });
+    }
+  })
+}
