@@ -4,36 +4,55 @@
   </block>
 </view>
 <view class='section'>
-<van-cell-group>
-  <van-field
-    value="{{ username }}"
-    required
-    label="活动主题"
-    placeholder="例如：约个奶茶叭"
-  />
-  <van-field
-    value="{{ description }}"
-    label="活动描述"
-    type="textarea"
-    placeholder="例如：阿姨奶茶"
-    autosize
-  />
-  <van-field
-    value="{{ need_person }}"
-    required
-    label="活动人数"
-    type="digit"
-  />
-  <van-field
-    value="{{ description }}"
-    required
-    label="活动地点"
-    type="textarea"
-    placeholder="例如：陕师大北门"
-    autosize
-  />
-</van-cell-group>
-</view>
-<view class="btn">
-    <van-button size="large">提交活动</van-button>
+  <form bindsubmit='addActivity'>
+  <van-cell-group>
+    <van-field
+      id="title"
+      value=""
+      required
+      label="活动主题"
+      placeholder="例如：约个奶茶叭"
+      bind:change="onChange"
+    />
+    <van-field
+      id="description"
+      value=""
+      label="活动描述"
+      type="textarea"
+      placeholder="例如：阿姨奶茶"
+      autosize
+      bind:change="onChange"
+    />
+    <van-datetime-picker
+      id="time"
+      type="datetime"
+      value="{{time}}"
+      tem-height="20"
+      visible-item-count="3"
+      cancel-button-text="选择活动开始时间"
+      bind:confirm="onInput"
+    />
+    <van-field
+      id="position"
+      value=""
+      required
+      label="活动地点"
+      type="textarea"
+      placeholder="例如：陕师大北门"
+      autosize
+      bind:change="onChange"
+    />
+    <van-field
+      id="number"
+      value=""
+      required
+      label="活动人数"
+      type="digit"
+      bind:change="onChange"
+    />
+  </van-cell-group>
+  <view class="btn">
+      <van-button type='info' round size="large" bind:click="addActivity">提交活动</van-button>
+  </view>
+</form>
 </view>
