@@ -78,7 +78,6 @@ Page({
     })
     console.log("id"+this.data.id),
     reda(this, 'banner');
-    
   },
 
 })
