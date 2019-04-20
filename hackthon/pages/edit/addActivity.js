@@ -36,7 +36,7 @@ Page({
             title: this.data.param['title'],
             description: this.data.param['description'],
             time: this.data.time,
-            // number: this.data.param['number'],
+            number: this.data.param['number'],
             location: this.data.param['location']}),
       method: 'POST',
       header: {
