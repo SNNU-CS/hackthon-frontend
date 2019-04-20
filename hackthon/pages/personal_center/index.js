@@ -10,7 +10,7 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  bindViewTap: function () {
+  bindViewTap: function(){
     wx.navigateTo({
       url: '../logs/logs'
     })
@@ -18,7 +18,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
