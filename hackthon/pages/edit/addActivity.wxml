@@ -1,0 +1,39 @@
+<view class='title'>
+  <block>
+    <text>{{title}}</text>
+  </block>
+</view>
+<view class='section'>
+<van-cell-group>
+  <van-field
+    value="{{ username }}"
+    required
+    label="活动主题"
+    placeholder="例如：约个奶茶叭"
+  />
+  <van-field
+    value="{{ description }}"
+    label="活动描述"
+    type="textarea"
+    placeholder="例如：阿姨奶茶"
+    autosize
+  />
+  <van-field
+    value="{{ need_person }}"
+    required
+    label="活动人数"
+    type="digit"
+  />
+  <van-field
+    value="{{ description }}"
+    required
+    label="活动地点"
+    type="textarea"
+    placeholder="例如：陕师大北门"
+    autosize
+  />
+</van-cell-group>
+</view>
+<view class="btn">
+    <van-button size="large">提交活动</van-button>
+</view>
