@@ -10,6 +10,6 @@
   </view>
 </view>
 <block wx:if="{{hasUserInfo}}">
-  <van-nav-bar title="全部活动" right-text="显示" bind:click-right="onClickRight" />
+  <van-nav-bar title="全部活动" right-text="显示" bind:click-right="onClickToActivities" />
   <van-nav-bar title="消息中心" right-text="显示" bind:click-right="onClickRight" />
 </block>
