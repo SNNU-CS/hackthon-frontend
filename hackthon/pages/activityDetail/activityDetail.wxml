@@ -1,0 +1,5 @@
+<view>
+<text>
+  id:{{id}}
+</text>
+</view>

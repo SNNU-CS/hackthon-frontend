@@ -13,5 +13,14 @@ Page({
     autoplay: true,
     interval: 3000,
     duration: 500,
+    id:20,
   },
+
+
+  buttonListener:function(){
+    var that = this
+    wx.navigateTo({
+      url: '/pages/activityDetail/activityDetail?activityUserId='+that.data.id
+    })
+  }
 })

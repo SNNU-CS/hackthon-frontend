@@ -7,7 +7,7 @@
   </swiper-item>
  </block>
 </swiper>
-
+<text> \n </text>
 <van-card
   now_person="2"
   need_person="10"
@@ -15,11 +15,10 @@
   title="一起快乐的拼奶茶呀"
 >
   <view slot="footer">
-    <van-button size="mini">加入活动</van-button>
+    <van-button size="small" bindtap='buttonListener'>加入活动</van-button>
   </view>
 </van-card>
-
-
+<text> \n </text>
 <van-card
   now_person="8"
   need_person="20"
@@ -27,6 +26,6 @@
   title="狼人杀来组团"
 >
   <view slot="footer">
-    <van-button size="mini">加入活动</van-button>
+    <van-button size="small">加入活动</van-button>
   </view>
 </van-card>
