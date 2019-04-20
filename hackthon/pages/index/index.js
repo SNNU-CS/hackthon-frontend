@@ -7,7 +7,7 @@ Page({
     imgUrls: [
       'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=919646662,166522488&fm=26&gp=0.jpg',
       'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2100067790,1782582700&fm=26&gp=0.jpg',
-      'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2880735460,2453907118&fm=26&gp=0.jpg'
+      'https://cdn-images-1.medium.com/max/1600/1*Y7cuggpW2zltTN-E41CwIw.png'
     ],
     indicatorDots: true,
     autoplay: true,
