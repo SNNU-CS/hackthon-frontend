@@ -1,11 +1,12 @@
 
 <!-- 活动详细内容 -->
-<van-panel title="主题: 奶茶茶" status="人数未满" use-footer-slo></van-panel>
-<van-panel title="开始时间: "></van-panel>
+<van-panel title="主题: {{banner.title}}" status="人数未满" use-footer-slo></van-panel>
+<van-panel title="开始时间: {{banner.create_time}}"></van-panel>
 <van-panel title="现有人数: "></van-panel>
 <van-panel title="需要人数: "></van-panel>
-<van-panel title="活动描述: ">
+<van-panel title="活动描述: {{banner.description}}">
 </van-panel>
+<van-toast id="van-toast" />
 <text>\n</text>
 <view slot="footer">
     <van-button bindtap='handleSubmit' type='info'round size="large" >加入活动</van-button>

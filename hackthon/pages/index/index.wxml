@@ -17,7 +17,7 @@
     title="{{item.title}}"
   >
     <view slot="footer">
-      <van-button size="small" bindtap='buttonListener'>查看活动</van-button>
+      <van-button size="small" bindtap='buttonListener' data-id='{{item.id}}'>查看活动</van-button>
     </view>
   </van-card>
 </view>
